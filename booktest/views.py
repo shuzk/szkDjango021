@@ -7,7 +7,9 @@ from booktest.models import BookInfo
 # Create your views here.
 # 查询所有图书并显示
 def index(request):
-    list = BookInfo.objects.all()
+    # list = BookInfo.objects.all()
+    # list = BookInfo.objects.filter(id__exact=1)
+    list = BookInfo.objects.filter(id=1)
     return render(request, "booktest/index.html", {"list":list})
 
 
